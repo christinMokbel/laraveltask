@@ -10,6 +10,8 @@
     <h3>{{$post-> description}}</h3>
     <h3>{{($post->published)?"published":"not published"}}</h3>
     <h3>{{$post-> auther}}</h3>
+    <img src="{{asset('assets/images/'.$post->image)}}" alt="post">
+
     <h3>{{$post-> created_at}}</h3>
 
 

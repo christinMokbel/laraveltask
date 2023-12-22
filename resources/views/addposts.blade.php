@@ -12,7 +12,7 @@
     @include('include.nav')
 <div class="container">
   <h2>Add new post</h2>
-  <form action="{{ route('storepost') }}" method="post">
+  <form action="{{ route('storepost') }}" method="post"  enctype="multipart/form-data">
     @csrf
     <div class="form-group">
       <label for="title">Title:</label>
@@ -28,8 +28,16 @@
       {{ $message }}
       @enderror
     </div>
+    <div class="form-group">
+      <label for="image">Image:</label>
+      <input type="file" class="form-control" id="image" placeholder="Enter image" name="image">
+      @error('image')
+        {{ $message }}
+      @enderror
+    </div>
+
     <div class="checkbox">
-      <label><input type="checkbox" name="published"> Published me</label>
+      <label><input type="checkbox" name="published"  @checked(old('published'))> Published me</label>
     </div>
     <div class="form-group">
       <label for="auther">auther:</label>
