@@ -58,3 +58,8 @@ Route::get('login',[Logincontroller::class,'login']);
 Route::get('createpost',[Postcontroller::class, 'create'])->name('createpost');
 Route::post('storepost', [Postcontroller::class,'store'])->name ('storepost');
 Route::get('posts',[Postcontroller::class, 'index'])->name ('posts');
+
+//session5
+Route::get('updatePost/{id}',[Postcontroller::class, 'edit']);
+Route::put('update/{id}',[Postcontroller::class, 'update'])->name ('update');
+Route::get('showPost/{id}',[Postcontroller::class, 'show'])->name ('show');

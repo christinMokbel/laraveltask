@@ -20,6 +20,8 @@
         <th>description</th>
         <th>published</th>
         <th>auther</th>
+        <th>Edit</th>
+        <th>Show</th>
       </tr>
     </thead>
     <tbody>
@@ -35,6 +37,8 @@
             @endif
         </td>
         <td>{{$post-> auther}}</td>
+        <td><a href="updatePost/{{$post->id}}">edit</a></td>
+        <td><a href="showPost/{{$post->id}}">Show</a></td>
       </tr>
       @endforeach
 
