@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>posts</title>
+  <title> trashed posts</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -12,7 +12,7 @@
 @include('include.nav')
 
 <div class="container">
-  <h2>all posts</h2>
+  <h2>trashed posts</h2>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -20,9 +20,10 @@
         <th>description</th>
         <th>published</th>
         <th>auther</th>
-        <th>Edit</th>
-        <th>Show</th>
+
         <th>Delete</th>
+        <th>restore</th>
+
 
       </tr>
     </thead>
@@ -39,11 +40,10 @@
             @endif
         </td>
         <td>{{$post-> auther}}</td>
-        <td><a href="updatePost/{{$post->id}}">edit</a></td>
-        <td><a href="showPost/{{$post->id}}">Show</a></td>
-        <td><a href="deletePost/{{$post->id}}" onclick="return confirm('Are you sure you want to delete?')" >delete</a></td>
 
-      </tr>
+        <td><a href="forceDelete/{{$post->id}}" onclick="return confirm('Are you sure you want to delete?')" >delete</a></td>
+        <td><a href="restorePost/{{$post->id}}"> Restore </a></td>
+    </tr>
       @endforeach
 
     </tbody>

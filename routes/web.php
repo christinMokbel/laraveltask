@@ -63,3 +63,9 @@ Route::get('posts',[Postcontroller::class, 'index'])->name ('posts');
 Route::get('updatePost/{id}',[Postcontroller::class, 'edit']);
 Route::put('update/{id}',[Postcontroller::class, 'update'])->name ('update');
 Route::get('showPost/{id}',[Postcontroller::class, 'show'])->name ('show');
+
+//session6
+Route::get('deletePost/{id}',[Postcontroller::class, 'destroy']);
+Route::get('trashed',[Postcontroller::class, 'trashed'])->name('trashed');
+Route::get('forceDelete/{id}',[Postcontroller::class, 'forceDelete']);
+Route::get('restorePost/{id}',[Postcontroller::class, 'restore']);

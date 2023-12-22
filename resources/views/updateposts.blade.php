@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Add post</title>
+  <title>update post</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -11,7 +11,7 @@
 <body>
     @include('include.nav')
 <div class="container">
-  <h2>Add new post</h2>
+  <h2> update post</h2>
   <form action="{{ route('update',$post->id) }}" method="post">
     @csrf
     @method('put')
