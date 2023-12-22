@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Logincontroller;
 
+use App\Http\Controllers\Postcontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,3 +53,8 @@ Route::prefix('blog')->group( function () {
 //session3
 Route::post('logged',[Logincontroller::class,'logged'])->name('logged');
 Route::get('login',[Logincontroller::class,'login']);
+
+//session4
+Route::get('createpost',[Postcontroller::class, 'create'])->name('createpost');
+Route::post('storepost', [Postcontroller::class,'store'])->name ('storepost');
+Route::get('posts',[Postcontroller::class, 'index'])->name ('posts');
